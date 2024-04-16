@@ -59,6 +59,8 @@ def main():
             tf.keras.layers.MaxPooling2D(),
             tf.keras.layers.Flatten(),
             tf.keras.layers.Dense(100, activation='relu'),
+            tf.keras.layers.Dense(100, activation='relu'),
+            tf.keras.layers.Dense(100, activation='relu'),
             tf.keras.layers.Dense(class_count),
         ]
     )
@@ -74,14 +76,15 @@ def main():
     print("print summary")
     model.summary()
     
-    print ("fit model")
+    print ("fit model ")
     model.fit(
         traindataset,
         validation_data=valdataset,
-        epochs=3
+        epochs=30
     )
 
     # save model
+    model.save('trained_model.keras')
 
 if __name__ == "__main__":
     main();
