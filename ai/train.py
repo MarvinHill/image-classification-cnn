@@ -3,13 +3,15 @@ from os import listdir
 from os.path import join, isdir
 
 def main():
+    print(tf.config.list_physical_devices())
     print("setup settings")
     BASE_PATH = './archive/simpsons_dataset/'
 
-    BATCH_SIZE = 32
+    BATCH_SIZE = 16
     IMG_HEIGHT = 180
     IMG_WIDTH = 180
     VALIDATION_SPLIT = 0.2
+    EPOCHS = 3
 
     print("load class count")
     loadedfiles = [f for f in listdir(BASE_PATH) if isdir(join(BASE_PATH, f))]
@@ -72,15 +74,12 @@ def main():
         loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
         metrics=['accuracy']
     )
-
-    print("print summary")
-    model.summary()
-    
+      
     print ("fit model ")
     model.fit(
         traindataset,
         validation_data=valdataset,
-        epochs=30
+        epochs=EPOCHS
     )
 
     # save model

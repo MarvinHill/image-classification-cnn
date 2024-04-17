@@ -1,5 +1,6 @@
 # project excludes
 ai/archive
+trained_model.keras
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
