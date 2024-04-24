@@ -1,8 +1,12 @@
 import tensorflow as tf
 from os import listdir
 from os.path import join, isdir
+import numpy as np
+
 
 def main():
+    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
     print(tf.config.list_physical_devices())
     print("setup settings")
     BASE_PATH = './archive/simpsons_dataset/'
@@ -11,13 +15,14 @@ def main():
     IMG_HEIGHT = 180
     IMG_WIDTH = 180
     VALIDATION_SPLIT = 0.2
-    EPOCHS = 3
+    EPOCHS = 2
 
     print("load class count")
     loadedfiles = [f for f in listdir(BASE_PATH) if isdir(join(BASE_PATH, f))]
     class_count = len(loadedfiles)
     print(loadedfiles)
     print("class: " + str(class_count))
+    np.save("classes.npy", loadedfiles)
 
     print("load datasets 1")
     # load dataset
@@ -27,9 +32,12 @@ def main():
         subset="training",
         image_size=(IMG_HEIGHT, IMG_WIDTH),
         seed=123,
-        batch_size=BATCH_SIZE, 
+        batch_size=BATCH_SIZE,
         labels='inferred'
-        )
+    )
+
+
+
     print("load datasets 2")
     valdataset = tf.keras.utils.image_dataset_from_directory(
         BASE_PATH,
@@ -37,10 +45,10 @@ def main():
         subset="validation",
         image_size=(IMG_HEIGHT, IMG_WIDTH),
         seed=123,
-        batch_size=BATCH_SIZE, 
+        batch_size=BATCH_SIZE,
         labels='inferred'
-        )
-    
+    )
+
     AUTOTUNE = tf.data.AUTOTUNE
 
     print("fetch datasets 1")
@@ -52,7 +60,7 @@ def main():
     # train model
     model = tf.keras.Sequential(
         [
-            tf.keras.layers.Rescaling(1./255), # rgb value from 0 to 255 converts to 0 to 1
+            tf.keras.layers.Rescaling(1. / 255),  # rgb value from 0 to 255 converts to 0 to 1
             tf.keras.layers.Conv2D(32, 3, activation='relu'),
             tf.keras.layers.MaxPooling2D(),
             tf.keras.layers.Conv2D(32, 3, activation='relu'),
@@ -66,7 +74,7 @@ def main():
             tf.keras.layers.Dense(class_count),
         ]
     )
-    
+
 
     print("compile model")
     model.compile(
@@ -74,8 +82,8 @@ def main():
         loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
         metrics=['accuracy']
     )
-      
-    print ("fit model ")
+
+    print("fit model ")
     model.fit(
         traindataset,
         validation_data=valdataset,
@@ -83,9 +91,8 @@ def main():
     )
 
     # save model
-    model.save('trained_model.keras')
+    # model.save('trained_model.keras')
+
 
 if __name__ == "__main__":
-    main();
-
-
+    main()
