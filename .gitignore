@@ -1,6 +1,5 @@
 # project excludes
 ai/archive
-trained_model.keras
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -155,6 +154,9 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Jetbrains IDE
+.idea/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
