@@ -1,0 +1,64 @@
+Found 20933 files belonging to 42 classes.
+Using 16747 files for training.
+2024-04-24 09:45:11.711145: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+load datasets 2
+Found 20933 files belonging to 42 classes.
+Using 4186 files for validation.
+fetch datasets 1
+fetch datasets 2
+create model
+compile model
+fit model
+Epoch 1/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 80s 75ms/step - accuracy: 0.2374 - loss: 2.7244 - val_accuracy: 0.5449 - val_loss: 1.6971
+Epoch 2/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 83s 79ms/step - accuracy: 0.5787 - loss: 1.5607 - val_accuracy: 0.6240 - val_loss: 1.3932
+Epoch 3/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 75s 70ms/step - accuracy: 0.7007 - loss: 1.0814 - val_accuracy: 0.6486 - val_loss: 1.3956
+Epoch 4/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 66s 63ms/step - accuracy: 0.7909 - loss: 0.7437 - val_accuracy: 0.6613 - val_loss: 1.4303
+Epoch 5/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 67s 64ms/step - accuracy: 0.8415 - loss: 0.5352 - val_accuracy: 0.6796 - val_loss: 1.4524
+Epoch 6/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 66s 63ms/step - accuracy: 0.8848 - loss: 0.3926 - val_accuracy: 0.6825 - val_loss: 1.8441
+Epoch 7/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 66s 63ms/step - accuracy: 0.9106 - loss: 0.2943 - val_accuracy: 0.6660 - val_loss: 2.1210
+Epoch 8/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 66s 63ms/step - accuracy: 0.9312 - loss: 0.2312 - val_accuracy: 0.6622 - val_loss: 2.1444
+Epoch 9/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 66s 63ms/step - accuracy: 0.9331 - loss: 0.2120 - val_accuracy: 0.6959 - val_loss: 2.0723
+Epoch 10/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 66s 63ms/step - accuracy: 0.9492 - loss: 0.1710 - val_accuracy: 0.6918 - val_loss: 2.2254
+Epoch 11/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 67s 64ms/step - accuracy: 0.9568 - loss: 0.1350 - val_accuracy: 0.6952 - val_loss: 2.2263
+Epoch 12/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 67s 64ms/step - accuracy: 0.9617 - loss: 0.1259 - val_accuracy: 0.6992 - val_loss: 2.2958
+Epoch 13/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 67s 64ms/step - accuracy: 0.9637 - loss: 0.1316 - val_accuracy: 0.6959 - val_loss: 2.2799
+Epoch 14/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 69s 66ms/step - accuracy: 0.9670 - loss: 0.1025 - val_accuracy: 0.7105 - val_loss: 2.4424
+Epoch 15/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 67s 64ms/step - accuracy: 0.9659 - loss: 0.1200 - val_accuracy: 0.7050 - val_loss: 2.4899
+Epoch 16/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 67s 64ms/step - accuracy: 0.9708 - loss: 0.1012 - val_accuracy: 0.7011 - val_loss: 2.4237
+Epoch 17/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 67s 64ms/step - accuracy: 0.9744 - loss: 0.0799 - val_accuracy: 0.6820 - val_loss: 2.9007
+Epoch 18/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 67s 64ms/step - accuracy: 0.9705 - loss: 0.0911 - val_accuracy: 0.7019 - val_loss: 2.8421
+Epoch 19/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 68s 65ms/step - accuracy: 0.9689 - loss: 0.0975 - val_accuracy: 0.7081 - val_loss: 2.6932
+Epoch 20/20
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 69s 66ms/step - accuracy: 0.9703 - loss: 0.1070 - val_accuracy: 0.7069 - val_loss: 2.4315
+PS C:\Users\janin\OneDrive\Dokumente\GitHub\datascience-project\ai>
+
+
+
+
+
+
+
+['abraham_grampa_simpson', 'agnes_skinner', 'apu_nahasapeemapetilon', 'barney_gumble', 'bart_simpson', 'carl_carlson', 'charles_montgomery_burns', 'chief_wiggum', 'cletus_spuckler', 'comic_book_guy', 'disco_stu', 'edna_krabappel
+', 'fat_tony', 'gil', 'groundskeeper_willie', 'homer_simpson', 'kent_brockman', 'krusty_the_clown', 'lenny_leonard', 'lionel_hutz', 'lisa_simpson', 'maggie_simpson', 'marge_simpson', 'martin_prince', 'mayor_quimby', 'milhouse_va
+n_houten', 'miss_hoover', 'moe_szyslak', 'ned_flanders', 'nelson_muntz', 'otto_mann', 'patty_bouvier', 'principal_skinner', 'professor_john_frink', 'rainier_wolfcastle', 'ralph_wiggum', 'selma_bouvier', 'sideshow_bob', 'sideshow
+_mel', 'snake_jailbird', 'troy_mcclure', 'waylon_smithers']
