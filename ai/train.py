@@ -16,7 +16,7 @@ def main():
     IMG_HEIGHT = 180
     IMG_WIDTH = 180
     VALIDATION_SPLIT = 0.2
-    EPOCHS = 15
+    EPOCHS = 12
 
     print("load class count")
     loadedfiles = [f for f in listdir(BASE_PATH) if isdir(join(BASE_PATH, f))]
@@ -69,7 +69,7 @@ def main():
             tf.keras.layers.MaxPooling2D(),
             tf.keras.layers.Flatten(),
             tf.keras.layers.Dense(300, activation='relu'),
-            tf.keras.layers.Dropout(0.5),
+            tf.keras.layers.Dropout(0.7),
             tf.keras.layers.Dense(class_count, activation='relu'),
         ]
     )
