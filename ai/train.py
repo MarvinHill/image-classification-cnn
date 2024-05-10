@@ -59,6 +59,7 @@ def main():
     # train model
     model = tf.keras.Sequential(
         [
+            tf.keras.layers.InputLayer(shape=(IMG_HEIGHT, IMG_WIDTH, 3)),
             tf.keras.layers.Rescaling(1. / 255),  # rgb value from 0 to 255 converts to 0 to 1
             tf.keras.layers.Conv2D(32, 3, activation='relu'),
             tf.keras.layers.MaxPooling2D(),
