@@ -1,7 +1,7 @@
 PS C:\Users\janin\OneDrive\Dokumente\GitHub\datascience-project\ai> python train.py
-2024-05-10 18:31:26.713641: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn
+2024-05-11 11:27:07.467262: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn
 them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2024-05-10 18:31:28.377570: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn
+2024-05-11 11:27:07.971075: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn
 them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 Num GPUs Available:  0
 [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU')]
@@ -15,7 +15,7 @@ class: 42
 load datasets 1
 Found 20933 files belonging to 42 classes.
 Using 16747 files for training.
-2024-05-10 18:31:33.265009: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2024-05-11 11:27:10.492184: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 load datasets 2
 Found 20933 files belonging to 42 classes.
@@ -26,27 +26,28 @@ create model
 compile model
 fit model
 Epoch 1/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 97s 92ms/step - accuracy: 0.1531 - loss: 3.2238 - val_accuracy: 0.4482 - val_loss: 2.1837
+C:\Users\janin\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\src\backend\tensorflow\nn.py:625: UserWarning: "`sparse_categorical_crossentropy` received `from_logits=True`, but the `output` argument was produced
+ by a Softmax activation and thus does not represent logits. Was this intended?
+  output, from_logits = _get_logits(
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 96s 90ms/step - accuracy: 0.1696 - loss: 3.0131 - val_accuracy: 0.4752 - val_loss: 2.0453
 Epoch 2/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 90s 86ms/step - accuracy: 0.4082 - loss: 2.2943 - val_accuracy: 0.5738 - val_loss: 1.7024
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 89s 85ms/step - accuracy: 0.4440 - loss: 2.0628 - val_accuracy: 0.6003 - val_loss: 1.5202
 Epoch 3/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 86s 82ms/step - accuracy: 0.5350 - loss: 1.8099 - val_accuracy: 0.6366 - val_loss: 1.4916
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 81s 77ms/step - accuracy: 0.5802 - loss: 1.5648 - val_accuracy: 0.6787 - val_loss: 1.2266
 Epoch 4/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 83s 79ms/step - accuracy: 0.6099 - loss: 1.5107 - val_accuracy: 0.6603 - val_loss: 1.3869
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 79s 75ms/step - accuracy: 0.6417 - loss: 1.2973 - val_accuracy: 0.7160 - val_loss: 1.0758
 Epoch 5/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 84s 80ms/step - accuracy: 0.6618 - loss: 1.2931 - val_accuracy: 0.6763 - val_loss: 1.2978
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 80s 77ms/step - accuracy: 0.7022 - loss: 1.0636 - val_accuracy: 0.7234 - val_loss: 1.0715
 Epoch 6/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 83s 79ms/step - accuracy: 0.6983 - loss: 1.1607 - val_accuracy: 0.6978 - val_loss: 1.2368
-Epoch 7/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 83s 79ms/step - accuracy: 0.7420 - loss: 1.0103 - val_accuracy: 0.7124 - val_loss: 1.2040
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 83s 80ms/step - accuracy: 0.7420 - loss: 0.8879 - val_accuracy: 0.7496 - val_loss: 0.9737
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 82s 78ms/step - accuracy: 0.7690 - loss: 0.7755 - val_accuracy: 0.7590 - val_loss: 0.9513
 Epoch 8/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 83s 80ms/step - accuracy: 0.7626 - loss: 0.9011 - val_accuracy: 0.7126 - val_loss: 1.1943
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 82s 78ms/step - accuracy: 0.8053 - loss: 0.6512 - val_accuracy: 0.7590 - val_loss: 1.0184
 Epoch 9/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 85s 81ms/step - accuracy: 0.7746 - loss: 0.8564 - val_accuracy: 0.7226 - val_loss: 1.1998
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 82s 79ms/step - accuracy: 0.8211 - loss: 0.5957 - val_accuracy: 0.7697 - val_loss: 0.9797
 Epoch 10/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 87s 83ms/step - accuracy: 0.7925 - loss: 0.7900 - val_accuracy: 0.7327 - val_loss: 1.1809
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 81s 77ms/step - accuracy: 0.8429 - loss: 0.5228 - val_accuracy: 0.7728 - val_loss: 1.0337
 Epoch 11/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 85s 82ms/step - accuracy: 0.8106 - loss: 0.7211 - val_accuracy: 0.7289 - val_loss: 1.2138
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 81s 77ms/step - accuracy: 0.8627 - loss: 0.4588 - val_accuracy: 0.7790 - val_loss: 1.0315
 Epoch 12/12
-1047/1047 ━━━━━━━━━━━━━━━━━━━━ 84s 81ms/step - accuracy: 0.8116 - loss: 0.7052 - val_accuracy: 0.7322 - val_loss: 1.2171
-PS C:\Users\janin\OneDrive\Dokumente\GitHub\datascience-project\ai>
+1047/1047 ━━━━━━━━━━━━━━━━━━━━ 81s 77ms/step - accuracy: 0.8650 - loss: 0.4334 - val_accuracy: 0.7838 - val_loss: 1.0788

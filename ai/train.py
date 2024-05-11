@@ -70,7 +70,7 @@ def main():
             tf.keras.layers.Flatten(),
             tf.keras.layers.Dense(300, activation='relu'),
             tf.keras.layers.Dropout(0.7),
-            tf.keras.layers.Dense(class_count, activation='relu'),
+            tf.keras.layers.Dense(class_count, activation='softmax'),
         ]
     )
 
