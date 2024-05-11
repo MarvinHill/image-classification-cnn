@@ -15,8 +15,8 @@ class ImagePredictorApp:
         self.selected_image_label = Label(master)
         self.selected_image_label.pack(pady=20)
 
-        self.predicted_character_label = Label(master, font=("Arial", 18))
-        self.predicted_character_label.pack(pady=10)
+        self.predicted_characters_label = Label(master, font=("Arial", 18))
+        self.predicted_characters_label.pack(pady=10)
 
         self.select_button = tk.Button(master, text="Bild auswählen", command=self.select_image)
         self.select_button.pack(pady=20)
@@ -25,8 +25,8 @@ class ImagePredictorApp:
         file_path = filedialog.askopenfilename(title="Select Image", filetypes=[("Image files", "*.png;*.jpg;*.jpeg")])
         if file_path:
             self.display_selected_image(file_path)
-            character = self.predict(file_path)
-            self.predicted_character_label.config(text=f"Vorhersage: {character}")
+            characters_with_probabilities = self.predict_top_three(file_path)
+            self.display_predicted_characters(characters_with_probabilities)
 
     def display_selected_image(self, file_path):
         image = Image.open(file_path)
@@ -34,25 +34,29 @@ class ImagePredictorApp:
         self.selected_image_label.config(image=photo)
         self.selected_image_label.image = photo
 
-    def predict(self, image_path):
+    def predict_top_three(self, image_path):
         trained_model = tf.keras.models.load_model('trained_model.keras')
 
         data_classes = np.load("classes.npy")
-        print(data_classes)
         img = Image.open(image_path).resize((180, 180))
-        # Convert to 3 shapes
         img = img.convert('RGB')
         img = np.array(img)
 
         result = trained_model.predict(img[None, :, :])
-        max = np.argmax(result)
-        character = data_classes[max]
-        print(character)
-        return character
+        top_three_indices = np.argsort(result[0])[-3:]
+        top_three_probabilities = result[0][top_three_indices]
+        top_three_characters = data_classes[top_three_indices]
+
+        characters_with_probabilities = zip(top_three_characters, top_three_probabilities)
+        return characters_with_probabilities
+
+    def display_predicted_characters(self, characters_with_probabilities):
+        characters_with_probabilities = reversed(list(characters_with_probabilities))
+        predicted_text = "\n".join([f"{character}: {probability:.2f}%" for character, probability in characters_with_probabilities])
+        self.predicted_characters_label.config(text=f"{predicted_text}")
 
 
 def main():
-    # Erstelle den Ordner "pictures", wenn er nicht existiert
     if not os.path.exists("pictures"):
         os.makedirs("pictures")
 
