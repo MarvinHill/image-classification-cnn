@@ -81,6 +81,8 @@ def main():
         metrics=['accuracy']
     )
 
+    model.summary()
+
     print("fit model ")
     history = model.fit(
         traindataset,
