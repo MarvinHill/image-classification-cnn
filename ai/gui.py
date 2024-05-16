@@ -43,16 +43,18 @@ class ImagePredictorApp:
         img = np.array(img)
 
         result = trained_model.predict(img[None, :, :])
+        print(result)
         top_three_indices = np.argsort(result[0])[-3:]
         top_three_probabilities = result[0][top_three_indices]
         top_three_characters = data_classes[top_three_indices]
+        print(top_three_characters)
 
         characters_with_probabilities = zip(top_three_characters, top_three_probabilities)
         return characters_with_probabilities
 
     def display_predicted_characters(self, characters_with_probabilities):
         characters_with_probabilities = reversed(list(characters_with_probabilities))
-        predicted_text = "\n".join([f"{character}: {probability:.2f}%" for character, probability in characters_with_probabilities])
+        predicted_text = "\n".join([f"{character}: {probability*100:.2f}%" for character, probability in characters_with_probabilities])
         self.predicted_characters_label.config(text=f"{predicted_text}")
 
 
